@@ -33,6 +33,7 @@ export default {
           900: colorWithOpacity('--color-primary-900')
         },
         secondary: {
+          0: colorWithOpacity('--color-secondary-0'),
           100: colorWithOpacity('--color-secondary-100'),
           200: colorWithOpacity('--color-secondary-200'),
           300: colorWithOpacity('--color-secondary-300'),
