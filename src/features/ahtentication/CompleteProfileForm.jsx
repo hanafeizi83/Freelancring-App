@@ -2,12 +2,32 @@ import React from 'react'
 import TextFailed from '../../ui/TextFailed'
 import { useForm } from 'react-hook-form';
 import RadioInput from '../../ui/RadioInput';
+import { useMutation } from '@tanstack/react-query';
+import { compeleteProfileApi } from '../../services/authentication';
+import toast from 'react-hot-toast';
+import RadioGroup from '../../ui/RadioGroup';
 
 function CompleteProfileForm() {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = (data) => {
-        console.log(data);
-
+    const { isPending, mutateAsync } = useMutation({
+        mutationFn: compeleteProfileApi
+    })
+    const onSubmit = async (data) => {
+        try {
+            const { message } = await mutateAsync(data);
+            toast.success(message);
+            if (!user.isActive) return navigate('/compelete-profile');
+            if (user.status !== 2) {
+                navigate('/')
+                toast('پروفایل شما در انتظار تایید است', { icon: '⚠' });
+                return;
+            }
+            if ('OWNER') return navigate('/owner')
+            if ('FREELANCER') return navigate('/freelancer')
+            if ('ADMIN') return navigate('/admin')
+        } catch (error) {
+            toast.error(error?.response?.data?.message)
+        }
     }
     return (
         <div className='w-full'>
@@ -34,23 +54,16 @@ function CompleteProfileForm() {
                 />
                 <div className='space-y-2'>
                     <div className='flex items-center gap-10'>
-                        <RadioInput
-                            label='کارفرما'
-                            value='owner'
+                        <RadioGroup
                             name='role'
-                            register={register}
                             validationSkma={{
-                                required: 'انتخاب نقش ضروری است '
+                                required: 'انتخاب نقش ضروری است'
                             }}
-                        />
-                        <RadioInput
-                            label='فرلنسر'
-                            value='freelancer'
-                            name='role'
                             register={register}
-                            validationSkma={{
-                                required: 'انتخاب نقش ضروری است '
-                            }}
+                            options={[
+                                { label: 'کارفرما', value: 'OWNER' },
+                                { label: 'فریلنسر', value: 'FREELANCER' }
+                            ]}
                         />
                     </div>
                     {errors && errors['role'] && <p className='text-error'>{errors['role'].message}</p>}
