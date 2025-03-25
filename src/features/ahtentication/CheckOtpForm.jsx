@@ -23,7 +23,7 @@ function CheckOtpForm({ phoneNumber, onSendOtp, otpResponse, onBack }) {
         try {
             const { user, message } = await mutateAsync({ phoneNumber, otp });
             toast.success(message)
-            if (!user.isActive) return navigate('/compelete-Profile');
+            if (!user.isActive) return navigate('/compelete-profile');
             if (user.status !== 2) {
                 navigate('/')
                 toast('پروفایل شما در انتظار تایید است', { icon: '⚠' });

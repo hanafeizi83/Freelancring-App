@@ -62,7 +62,7 @@ body {
 
 @layer components {
     .textFailed {
-        @apply w-full bg-secondary-100 border border-primary-500 rounded-xl h-10 outline-none transition-all duration-300 focus:border-primary-900 focus:shadow-lg focus:shadow-primary-300
+        @apply w-full bg-secondary-100 border border-primary-500 rounded-xl py-2 outline-none transition-all duration-300 focus:border-primary-900 focus:shadow-lg focus:shadow-primary-300
     }
     .btn{
         @apply outline-none border-none rounded-xl font-bold
