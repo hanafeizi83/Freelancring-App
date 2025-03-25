@@ -1,10 +1,10 @@
 import React from 'react'
-import SendOtpForm from '../features/ahtentication/SendOtpForm'
+import AuthContainer from '../features/ahtentication/AuthContainer'
 
 function Auth() {
   return (
     <div className='sm:max-w-sm container h-screen flex items-center justify-center'>
-      <SendOtpForm />
+      <AuthContainer />
     </div>
   )
 }

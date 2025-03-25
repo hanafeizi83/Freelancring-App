@@ -65,10 +65,13 @@ body {
         @apply w-full bg-secondary-100 border border-primary-500 rounded-xl h-10 outline-none transition-all duration-300 focus:border-primary-900 focus:shadow-lg focus:shadow-primary-300
     }
     .btn{
-        @apply outline-none border-none rounded-xl
+        @apply outline-none border-none rounded-xl font-bold
     }
     .btn--primary{
         @apply bg-primary-800 text-secondary-0 p-2
+    }
+    .btn--secondary{
+        @apply bg-secondary-300 text-secondary-900 p-2
     }
 }
 .PhoneInput--focus input{
