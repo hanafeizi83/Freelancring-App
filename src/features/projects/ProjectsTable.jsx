@@ -1,6 +1,8 @@
 import React from 'react'
 import { HiPlus } from 'react-icons/hi'
 import useOwnerProjects from './useOwnerProjects'
+import Table from '../../ui/Table';
+import ProjectsRow from './ProjectsRow';
 
 function ProjectsTable() {
     const { isLoading, projects = [] } = useOwnerProjects();
@@ -12,12 +14,12 @@ function ProjectsTable() {
             <div className='flex items-center justify-between'>
                 <h2 className='font-bold text-base'>لیست پروژه ها</h2>
                 <button className='btn btn--primary flex items-center gap-3 font-bold'>
-                    <HiPlus className='w-5 h-5 font-bold'/>
+                    <HiPlus className='w-5 h-5 font-bold' />
                     <span>اضافه کردن پروژه</span>
                 </button>
             </div>
-            <table>
-                <thead>
+            <Table>
+                <Table.Header>
                     <th>#</th>
                     <th>عنوان</th>
                     <th>توضیحات</th>
@@ -28,27 +30,16 @@ function ProjectsTable() {
                     <th>فریلنسر</th>
                     <th>وضعیت</th>
                     <th>عملیات</th>
-                </thead>
-                <tbody>
+                </Table.Header>
+                <Table.Body>
                     {
                         projects && projects.map((project, index) => (
-                            <tr>
-                                <td>{index + 1}</td>
-                                <td>{project.title}</td>
-                                <td>{project.description}</td>
-                                <td>{project.deadline}</td>
-                                <td>{project.budget}</td>
-                                <td>{project.category.title}</td>
-                                <td>{'tags'}</td>
-                                <td>{project.freelance?.name || '-'}</td>
-                                <td>{project.status}</td>
-                                <td>...</td>
-                            </tr>
+                            <ProjectsRow key={project._id} project={project} index={index} />
                         ))
                     }
 
-                </tbody>
-            </table>
+                </Table.Body>
+            </Table>
         </div>
     )
 }
