@@ -1,21 +1,21 @@
-import React, { Children } from 'react'
+import React from 'react'
 import { GoProjectSymlink } from 'react-icons/go'
 import { HiHome } from 'react-icons/hi'
-import { NavLink } from 'react-router-dom'
+import CustomeNavLink from './CustomeNavLink'
 
 function Sidebar() {
     return (
-        <div className='bg-secondary-0 row-span-2 row-start-1 p-4'>
+        <div className='bg-primary-800 text-secondary-0 row-span-2 row-start-1 pr-2 pt-14'>
             <ul className='space-y-4'>
-                <CustomNavLink to='dashboard'>
+                <CustomeNavLink to='dashboard'>
                     <HiHome />
                     <span>داشبورد</span>
-                </CustomNavLink>
+                </CustomeNavLink>
 
-                <CustomNavLink to='projects'>
+                <CustomeNavLink to='projects'>
                     <GoProjectSymlink />
                     <span>پروژه ها</span>
-                </CustomNavLink>
+                </CustomeNavLink>
             </ul>
         </div>
     )
@@ -24,18 +24,3 @@ function Sidebar() {
 export default Sidebar
 
 
-function CustomNavLink({ to, children }) {
-    const navlinkClass = "flex items-center gap-x-2 hover:bg-primary-100/80 hover:text-primary-900 px-2 py-1.5 rounded-lg  transition-all duration-300";
-    return <li>
-        <NavLink
-            to={to}
-            className={({ isActive }) => {
-                isActive
-                    ? `${navlinkClass} bg-primary-100/80 text-primary-900`
-                    : `${navlinkClass} text-secondary-600`
-            }}
-        >
-            {children}
-        </NavLink>
-    </li>
-}

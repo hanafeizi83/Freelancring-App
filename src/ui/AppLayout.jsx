@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 
 function AppLayout() {
   return (
-    <div className='grid grid-cols-[15rem_1fr] grid-rows-[3rem_1fr] h-screen'>
+    <div className='grid grid-cols-[12rem_1fr] grid-rows-[3rem_1fr] h-screen'>
       <Header />
       <Sidebar />
       <div className='bg-secondary-100 p-8 overflow-y-auto'>

@@ -64,25 +64,47 @@ body {
     .textFailed {
         @apply w-full bg-secondary-100 border border-primary-500 rounded-xl py-2 outline-none transition-all duration-300 focus:border-primary-900 focus:shadow-lg focus:shadow-primary-300
     }
-    .btn{
+
+    .btn {
         @apply outline-none border-none rounded-xl font-bold
     }
-    .btn--primary{
+
+    .btn--primary {
         @apply bg-primary-800 text-secondary-0 p-2
     }
-    .btn--secondary{
+
+    .btn--secondary {
         @apply bg-secondary-300 text-secondary-900 p-2
     }
+
+    /* .navLinkClass {
+        @apply flex items-center gap-x-3 px-2 py-2 rounded-tr-lg rounded-br-lg transition-all duration-100 relative
+    }
+
+    .navLinkHoverClass {
+        @apply hover:after:shadow-[-20px_-20px_0_10px]  hover:after:content-[''] hover:after:w-[20px] hover:after:duration-0 hover:after:transition-all hover:after:h-[20px] hover:after:bg-transparent hover:after:shadow-secondary-0 hover:after:absolute hover:after:-bottom-[20px] hover:after:rounded-[50%] hover:after:left-0 hover:before:shadow-[-20px_20px_0_10px]  hover:before:content-[''] hover:before:w-[20px] hover:before:duration-0 hover:before:transition-all hover:before:h-[20px] hover:before:bg-transparent hover:before:shadow-secondary-0 hover:before:absolute hover:before:-top-[20px] hover:before:rounded-[50%] hover:before:left-0 hover:bg-secondary-100 hover:text-primary-800
+    }
+
+    .navLinkAfterClass {
+        @apply after:shadow-[-20px_-20px_0_10px]  after:content-[''] after:w-[20px] after:duration-0 hover:bg-secondary-100 hover:text-primary-800 after:transition-all after:h-[20px] after:bg-transparent after:shadow-secondary-0 after:absolute after:-bottom-[20px] after:rounded-[50%] after:left-0
+    }
+
+    .navLinkBeforeClass {
+        @apply before:shadow-[-20px_20px_0_10px]   before:content-[''] before:w-[20px] before:duration-0 before:transition-all before:h-[20px] before:bg-transparent before:shadow-secondary-0 before:absolute before:-top-[20px] before:rounded-[50%] before:left-0
+    } */
 }
-.PhoneInput--focus input{
+
+.PhoneInput--focus input {
     outline: none;
 }
-.PhoneInput{
+
+.PhoneInput {
     outline: none;
     padding: .5rem;
     background-color: transparent;
 }
-.PhoneInputCountry{
+
+.PhoneInputCountry {
     width: 17%;
     display: flex;
     align-items: center;
