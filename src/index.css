@@ -110,3 +110,29 @@ body {
     align-items: center;
     justify-content: space-between;
 }
+
+/* Table */
+table {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+thead {
+    background-color: transparent;
+    border-bottom: 2px solid rgb(var(--color-primary-800));
+}
+
+th {
+    color: rgb(var(--color-secondary-400));
+    font-size: .9rem;
+    padding: .5rem 0;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(var(--color-secondary-200));
+}
+
+td {
+    text-align: center;
+    padding: 1rem;
+}
