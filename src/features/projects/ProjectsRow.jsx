@@ -11,7 +11,6 @@ import ConfirmDelete from '../../ui/ConfirmDelete';
 function ProjectsRow({ project, index }) {
     const [isOpenEdit, setIsOpenEdit] = useState(false);
     const [isOpenDelete, setIsOpenDelete] = useState(false);
-
     const { title, description, deadline, budget, category, freelancer, tags, status } = project;
     return (
         <Table.Row>
