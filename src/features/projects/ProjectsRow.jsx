@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Table from '../../ui/Table'
 import truncateText from '../../utils/truncateText';
 import showDatetoLocal from '../../utils/showDatetoLocal';
 import { toPersianNumbersWithComma } from '../../utils/toPresionNumbers';
 import { HiTrash } from 'react-icons/hi';
 import { MdEditDocument } from 'react-icons/md';
+import Modal from '../../ui/Modal';
 
 function ProjectsRow({ project, index }) {
+    const [isOpenEdit, setIsOpenEdit] = useState(false);
+    const [isOpenDelete, setIsOpenDelete] = useState(false);
+
     const { title, description, deadline, budget, category, freelancer, tags, status } = project;
     return (
         <Table.Row>
@@ -29,7 +33,12 @@ function ProjectsRow({ project, index }) {
             }</td>
             <td>
                 <div className='flex gap-x-3'>
-                    <button className='btn'><HiTrash className='icon text-error' /></button>
+                    <button className='btn' onClick={() => setIsOpenDelete(true)}>
+                        <HiTrash className='icon text-error' />
+                    </button>
+                    <Modal onClose={() => setIsOpenDelete(false)} open={isOpenDelete} title={'حدف پروژه'}>
+                        
+                    </Modal>
                     <button className='btn'><MdEditDocument className='icon text-primary-800' /></button>
                 </div>
 
