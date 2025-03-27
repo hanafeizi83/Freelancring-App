@@ -77,6 +77,26 @@ body {
         @apply bg-secondary-300 text-secondary-900 p-2
     }
 
+    .icon {
+        @apply w-5 h-5
+    }
+
+    .badge {
+        @apply rounded-2xl px-3 py-0.5
+    }
+
+    .badge--secondary {
+        @apply bg-secondary-300 text-secondary-800
+    }
+
+    .badge--danger {
+        @apply bg-error text-secondary-0
+    }
+
+    .badge--success {
+        @apply bg-success text-secondary-0
+    }
+
     /* .navLinkClass {
         @apply flex items-center gap-x-3 px-2 py-2 rounded-tr-lg rounded-br-lg transition-all duration-100 relative
     }
@@ -115,6 +135,7 @@ body {
 table {
     width: 100%;
     margin-top: 2rem;
+
 }
 
 thead {
@@ -134,5 +155,9 @@ tr:nth-child(even) {
 
 td {
     text-align: center;
-    padding: 1rem;
+    padding: 1rem 0;
+}
+
+td:nth-child(1) {
+    padding: 1rem.5rem 1rem 0;
 }

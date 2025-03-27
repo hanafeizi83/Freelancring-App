@@ -10,7 +10,7 @@ function ProjectsTable() {
 
 
     return (
-        <div>
+        <div className='overflow-x-auto'>
             <div className='flex items-center justify-between'>
                 <h2 className='font-bold text-base'>لیست پروژه ها</h2>
                 <button className='btn btn--primary flex items-center gap-3 font-bold'>

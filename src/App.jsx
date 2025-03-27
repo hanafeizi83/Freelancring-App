@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
 import Auth from './pages/Auth'
@@ -22,6 +22,7 @@ function App() {
           <Route path='/compelete-profile' element={<CompleteProfile />} />
 
           <Route path='/owner' element={<AppLayout />}>
+            <Route index element={<Navigate to='dashboard' />} />
             <Route path='dashboard' element={<OwnerDashboard />} />
             <Route path='projects' element={<Projects />} />
             <Route path='prajects/:id' element={<Project />} />
