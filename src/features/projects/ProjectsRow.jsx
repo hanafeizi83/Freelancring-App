@@ -6,6 +6,7 @@ import { toPersianNumbersWithComma } from '../../utils/toPresionNumbers';
 import { HiTrash } from 'react-icons/hi';
 import { MdEditDocument } from 'react-icons/md';
 import Modal from '../../ui/Modal';
+import ConfirmDelete from '../../ui/ConfirmDelete';
 
 function ProjectsRow({ project, index }) {
     const [isOpenEdit, setIsOpenEdit] = useState(false);
@@ -23,7 +24,7 @@ function ProjectsRow({ project, index }) {
             <td>
                 <div className='flex flex-wrap items-center max-w-[115px] gap-2 p-1'>
                     {tags.map(tag => (
-                        <span className='badge badge--secondary'>{tag}</span>
+                        <span className='badge badge--secondary' key={tag}>{tag}</span>
                     ))}
                 </div>
             </td>
@@ -36,8 +37,8 @@ function ProjectsRow({ project, index }) {
                     <button className='btn' onClick={() => setIsOpenDelete(true)}>
                         <HiTrash className='icon text-error' />
                     </button>
-                    <Modal onClose={() => setIsOpenDelete(false)} open={isOpenDelete} title={'حدف پروژه'}>
-                        
+                    <Modal onClose={() => setIsOpenDelete(false)} open={isOpenDelete} title={`حذف پروژه ${project.title}`}>
+                        <ConfirmDelete project={project} onClose={() => setIsOpenDelete(false)} />
                     </Modal>
                     <button className='btn'><MdEditDocument className='icon text-primary-800' /></button>
                 </div>
