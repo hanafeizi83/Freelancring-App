@@ -21,7 +21,7 @@ function ProjectsTable() {
                     <span>اضافه کردن پروژه</span>
                 </button>
                 <Modal open={isOpenCreate} onClose={() => setIsOpenCreeate(false)} title={'افزودن پروژه جدید'}>
-                    <CreeateProjectForm />
+                    <CreeateProjectForm onClose={() => setIsOpenCreeate(false)} />
                 </Modal>
             </div>
             <Table>

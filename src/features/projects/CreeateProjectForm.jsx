@@ -5,15 +5,27 @@ import SelectRHF from '../../ui/SelectRHF';
 import useCategories from '../../hook/useCategories';
 import { TagsInput } from 'react-tag-input-component';
 import DatePickerFailed from '../../ui/DatePickerFailed';
-function CreeateProjectForm() {
+import useCreateProject from './useCreateProject';
+function CreeateProjectForm({ onClose }) {
+    const [tag, setTag] = useState([]);
+    const [date, setDate] = useState();
     const { isLoading, categories } = useCategories();
-    const [tag, setTag] = useState([])
-    const [date, setDate] = useState()
-
+    const { isCreating, createProject } = useCreateProject();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        console.log(data);
+        const newProject = {
+            ...data,
+            tags: tag,
+            deadline: new Date(date).toISOString()
+        }
+        
+        createProject(newProject, {
+            onSuccess: () => {
+                onClose()
+            }
+        })
     }
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='space-y-4'>
             <TextFailed
@@ -48,7 +60,7 @@ function CreeateProjectForm() {
             />
             <SelectRHF
                 label='دسته بندی '
-                name='categoty'
+                name='category'
                 required
                 register={register}
                 errors={errors}
