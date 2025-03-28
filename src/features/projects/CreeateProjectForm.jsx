@@ -6,28 +6,54 @@ import useCategories from '../../hook/useCategories';
 import { TagsInput } from 'react-tag-input-component';
 import DatePickerFailed from '../../ui/DatePickerFailed';
 import useCreateProject from './useCreateProject';
-function CreeateProjectForm({ onClose }) {
-    const [tag, setTag] = useState([]);
-    const [date, setDate] = useState();
+import useEditProject from './useEditProject';
+function CreeateProjectForm({ onClose, project = {} }) {
+    const projectId = project._id;
+    const isEdit = Boolean(projectId);
+    const { title, description, budget, category, tags, deadline } = project;
+    const [tag, setTag] = useState(tags || []);
+    const [date, setDate] = useState(deadline || '');
     const { isLoading, categories } = useCategories();
     const { isCreating, createProject } = useCreateProject();
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { isEditing, editProject } = useEditProject();
+    let editValues = {};
+    if (isEdit) {
+        editValues = {
+            title,
+            description,
+            budget,
+            category,
+            tags: tag,
+            deadline: date
+        }
+    }
+    const { register, handleSubmit, formState: { errors } } = useForm({ defaultValues: editValues });
     const onSubmit = (data) => {
         const newProject = {
             ...data,
             tags: tag,
             deadline: new Date(date).toISOString()
         }
-        
-        createProject(newProject, {
-            onSuccess: () => {
-                onClose()
-            }
-        })
+        if (isEdit) {
+            console.log(projectId, newProject);
+
+            editProject({ id: projectId,newProject }, {
+                onSuccess: () => {
+                    onClose()
+                }
+            })
+        } else {
+            createProject(newProject, {
+                onSuccess: () => {
+                    onClose()
+                }
+            })
+        }
+
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='space-y-4'>
+        <form onSubmit={handleSubmit(onSubmit)} className='space-y-4 text-right'>
             <TextFailed
                 label='عنوان'
                 name='title'

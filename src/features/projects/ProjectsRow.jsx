@@ -7,6 +7,7 @@ import { HiTrash } from 'react-icons/hi';
 import { MdEditDocument } from 'react-icons/md';
 import Modal from '../../ui/Modal';
 import ConfirmDelete from '../../ui/ConfirmDelete';
+import CreeateProjectForm from './CreeateProjectForm';
 
 function ProjectsRow({ project, index }) {
     const [isOpenEdit, setIsOpenEdit] = useState(false);
@@ -33,13 +34,22 @@ function ProjectsRow({ project, index }) {
             }</td>
             <td>
                 <div className='flex gap-x-3'>
-                    <button className='btn' onClick={() => setIsOpenDelete(true)}>
-                        <HiTrash className='icon text-error' />
-                    </button>
-                    <Modal onClose={() => setIsOpenDelete(false)} open={isOpenDelete} title={`حذف پروژه ${project.title}`}>
-                        <ConfirmDelete project={project} onClose={() => setIsOpenDelete(false)} />
-                    </Modal>
-                    <button className='btn'><MdEditDocument className='icon text-primary-800' /></button>
+                    <>
+                        <button className='btn' onClick={() => setIsOpenDelete(true)}>
+                            <HiTrash className='icon text-error' />
+                        </button>
+                        <Modal onClose={() => setIsOpenDelete(false)} open={isOpenDelete} title={`حذف پروژه ${project.title}`}>
+                            <ConfirmDelete project={project} onClose={() => setIsOpenDelete(false)} />
+                        </Modal>
+                    </>
+                    <>
+                        <button onClick={() => setIsOpenEdit(true)} className='btn'>
+                            <MdEditDocument className='icon text-primary-800' />
+                        </button>
+                        <Modal open={isOpenEdit} onClose={() => setIsOpenEdit(false)} title={`ویرایش پروژه ${project.title}`}>
+                            <CreeateProjectForm project={project} onClose={() => setIsOpenEdit(false)} />
+                        </Modal>
+                    </>
                 </div>
 
             </td>
