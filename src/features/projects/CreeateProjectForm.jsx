@@ -7,6 +7,7 @@ import { TagsInput } from 'react-tag-input-component';
 import DatePickerFailed from '../../ui/DatePickerFailed';
 import useCreateProject from './useCreateProject';
 import useEditProject from './useEditProject';
+import Loader from './../../ui/Loader'
 function CreeateProjectForm({ onClose, project = {} }) {
     const projectId = project._id;
     const isEdit = Boolean(projectId);
@@ -37,7 +38,7 @@ function CreeateProjectForm({ onClose, project = {} }) {
         if (isEdit) {
             console.log(projectId, newProject);
 
-            editProject({ id: projectId,newProject }, {
+            editProject({ id: projectId, newProject }, {
                 onSuccess: () => {
                     onClose()
                 }
@@ -110,7 +111,14 @@ function CreeateProjectForm({ onClose, project = {} }) {
                 onChange={setDate}
                 name='deadline'
             />
-            <button className='btn btn--primary w-full'>تایید </button>
+            {
+                isCreating || isEditing ? <Loader /> :
+                    <button className='btn btn--primary w-full'>
+                        {
+                            isEdit ?'ویرایش پروژه':'افزودن پروژه'
+                        }
+                     </button>
+            }
         </form>
     )
 }

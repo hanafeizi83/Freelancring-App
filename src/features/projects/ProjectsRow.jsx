@@ -8,6 +8,7 @@ import { MdEditDocument } from 'react-icons/md';
 import Modal from '../../ui/Modal';
 import ConfirmDelete from '../../ui/ConfirmDelete';
 import CreeateProjectForm from './CreeateProjectForm';
+import ToggleProjectStatus from './ToggleProjectStatus';
 
 function ProjectsRow({ project, index }) {
     const [isOpenEdit, setIsOpenEdit] = useState(false);
@@ -29,9 +30,9 @@ function ProjectsRow({ project, index }) {
                 </div>
             </td>
             <td>{freelancer?.name || '-'}</td>
-            <td>{
-                status === 'OPEN' ? <span className='badge badge--success'>باز</span> : <span className='badge badge--danger'>بسته</span>
-            }</td>
+            <td>
+                    <ToggleProjectStatus project={project}/>
+            </td>
             <td>
                 <div className='flex gap-x-3'>
                     <>
