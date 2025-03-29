@@ -63,6 +63,9 @@ body {
             --color-error: 255, 71, 87;
             --color-red-500: 239, 68, 68;
             --color-red-300: 252, 165, 165;
+            --color-purple: 123, 107, 212;
+            --color-pink: 253, 73, 107;
+            --color-green:4, 172, 65;
         }
 
         &.dark-mode {

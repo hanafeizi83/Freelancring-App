@@ -1,9 +1,10 @@
 import React from 'react'
+import DashboardLayout from '../features/owner/DashboardLayout'
 
 function OwnerDashboard() {
     return (
         <div>
-            OwnerDashboard
+            <DashboardLayout />
         </div>
     )
 }

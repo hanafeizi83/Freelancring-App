@@ -46,7 +46,10 @@ export default {
         },
         error: colorWithOpacity('--color-error'),
         warning: colorWithOpacity('--color-warning'),
-        success: colorWithOpacity('--color-success')
+        success: colorWithOpacity('--color-success'),
+        purple: colorWithOpacity('--color-purple'),
+        pink: colorWithOpacity('--color-pink'),
+        green: colorWithOpacity('--color-green')
       },
       fontFamily: {
         sans: ['Vazir', ...fontFamily.sans]
