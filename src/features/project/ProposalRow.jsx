@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Table from '../../ui/Table'
 import truncateText from '../../utils/truncateText'
 import { toPersianNumbersWithComma } from '../../utils/toPresionNumbers'
+import Modal from '../../ui/Modal'
+import ChangeProposalsStatus from './ChangeProposalsStatus'
 
 const statusStyle = [
     { label: 'رد شده ', className: 'badge--danger' },
@@ -10,6 +12,7 @@ const statusStyle = [
 ]
 
 function ProposalRow({ proposal, index }) {
+    const [isOpenStatus, setIsOpenStatus] = useState(false)
     const { description, price, duration, user, status } = proposal
     return (
         <Table.Row>
@@ -24,9 +27,12 @@ function ProposalRow({ proposal, index }) {
                 }
             </td>
             <td>
-                <button className='btn btn--secondary'>
+                <button className='btn btn--secondary' onClick={() => setIsOpenStatus(true)}>
                     تغییر وضعیت
                 </button>
+                <Modal open={isOpenStatus} onClose={() => setIsOpenStatus(false)} title={`تغییر وضعیت  ${proposal.description}`}>
+                    <ChangeProposalsStatus onClose={() => setIsOpenStatus(false)} proposalId={proposal._id} />
+                </Modal>
             </td>
         </Table.Row >
     )
