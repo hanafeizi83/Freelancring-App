@@ -25,7 +25,7 @@ function App() {
             <Route index element={<Navigate to='dashboard' />} />
             <Route path='dashboard' element={<OwnerDashboard />} />
             <Route path='projects' element={<Projects />} />
-            <Route path='prajects/:id' element={<Project />} />
+            <Route path='project/:id' element={<Project />} />
           </Route>
         </Routes>
       </QueryClientProvider>

@@ -9,7 +9,7 @@ import CreeateProjectForm from './CreeateProjectForm';
 function ProjectsTable() {
     const { isLoading, projects = [] } = useOwnerProjects();
     const [isOpenCreate, setIsOpenCreeate] = useState();
-
+    
     return (
         <div className='overflow-x-auto'>
             <div className='flex items-center justify-between'>
@@ -36,6 +36,7 @@ function ProjectsTable() {
                     <th>فریلنسر</th>
                     <th>وضعیت</th>
                     <th>عملیات</th>
+                    <th>جزئیات</th>
                 </Table.Header>
                 <Table.Body>
                     {
