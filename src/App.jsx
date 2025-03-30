@@ -10,6 +10,7 @@ import OwnerDashboard from './pages/OwnerDashboard'
 import Projects from './pages/Projects'
 import Project from './pages/Project'
 import DarkModeProvider from './context/DarkModeProvider'
+import OwnerLayout from './features/owner/OwnerLayout'
 
 function App() {
   const queryClinet = new QueryClient();
@@ -23,7 +24,7 @@ function App() {
             <Route path='/auth' element={<Auth />} />
             <Route path='/compelete-profile' element={<CompleteProfile />} />
 
-            <Route path='/owner' element={<AppLayout />}>
+            <Route path='/owner' element={<OwnerLayout />}>
               <Route index element={<Navigate to='dashboard' />} />
               <Route path='dashboard' element={<OwnerDashboard />} />
               <Route path='projects' element={<Projects />} />

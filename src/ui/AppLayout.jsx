@@ -3,11 +3,11 @@ import Header from './Header'
 import Sidebar from './Sidebar'
 import { Outlet } from 'react-router-dom'
 
-function AppLayout() {
+function AppLayout({ children }) {
   return (
     <div className='grid grid-cols-[12rem_1fr] grid-rows-[3rem_1fr] h-screen'>
       <Header />
-      <Sidebar />
+      {children}
       <div className='bg-secondary-100 p-8 overflow-y-auto'>
         <div className='w-auto max-w-screen-lg'>
           <Outlet />
