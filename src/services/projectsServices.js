@@ -23,3 +23,7 @@ export function changeProjectStatusApi({ id, data }) {
 export function projectApi(id) {
     return http.get(`/project/${id}`).then(({ data }) => data.data)
 }
+
+export function projectsApi() {
+    return http.get(`/project/list`).then(({ data }) => data.data)
+}

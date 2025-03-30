@@ -7,7 +7,6 @@ function DarkModeProvider({ children }) {
     const [isDarkMode, setIsDarkMode] = useLocalStorageTheme('isDarkMode',
         window.matchMedia('(prefers-color-scheme: dark)').matches)
 
-        console.log(window.matchMedia('(prefers-color-scheme: dark)').matches);
         
 
     useEffect(() => {
