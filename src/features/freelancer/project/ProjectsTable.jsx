@@ -2,8 +2,12 @@ import React from 'react'
 import Table from './../../../ui/Table'
 import useProjects from './useProjects'
 import ProjectRow from './ProjectRow';
+import Loader from './../../../ui/Loader'
+import Empty from '../../../ui/Empty';
 function ProjectsTable() {
-    const { projects, isLoading } = useProjects();
+    const { projects={}, isLoading } = useProjects();
+    if (!projects.length) return <Empty resourceName={'درخواستی'} />
+    if (isLoading) return <Loader />
     return (
         <Table>
             <Table.Header>

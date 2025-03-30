@@ -2,7 +2,6 @@ import React from 'react'
 import Table from '../../ui/Table'
 import truncateText from '../../utils/truncateText'
 import { toPersianNumbersWithComma } from '../../utils/toPresionNumbers'
-import showDatetoLocal from '../../utils/showDatetoLocal'
 
 const statusStyle = [
     { label: 'رد شده', className: 'badge--danger' },
@@ -10,8 +9,7 @@ const statusStyle = [
     { label: 'تایید شده', className: 'badge--success' }
 ]
 function ProposalRow({ proposal, index }) {
-    const { description, price, duration, status } = proposal
-    console.log(status);
+    const { description, price, duration, status } = proposal;
 
     return (
         <Table.Row>
