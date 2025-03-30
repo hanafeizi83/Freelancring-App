@@ -11,6 +11,10 @@ import Projects from './pages/Projects'
 import Project from './pages/Project'
 import DarkModeProvider from './context/DarkModeProvider'
 import OwnerLayout from './features/owner/OwnerLayout'
+import FreelancerLayout from './features/freelancer/FreelancerLayout'
+import FreelancerDashboard from './pages/FreelancerDashboard'
+import SubmitProjects from './pages/SubmitProjects'
+import Proposals from './pages/Proposals'
 
 function App() {
   const queryClinet = new QueryClient();
@@ -29,6 +33,13 @@ function App() {
               <Route path='dashboard' element={<OwnerDashboard />} />
               <Route path='projects' element={<Projects />} />
               <Route path='project/:id' element={<Project />} />
+            </Route>
+
+            <Route path='/freelancer' element={<FreelancerLayout />}>
+              <Route index element={<Navigate to='dashboard' />} />
+              <Route path='dashboard' element={<FreelancerDashboard />} />
+              <Route path='projects' element={<SubmitProjects />} />
+              <Route path='proposals' element={<Proposals />} />
             </Route>
           </Routes>
         </QueryClientProvider>
