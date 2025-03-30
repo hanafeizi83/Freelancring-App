@@ -7,6 +7,8 @@
 
 body {
     background-color: var(--background-app-rgb);
+    margin: 0;
+    padding: 0;
 }
 
 .rti--container {
@@ -30,6 +32,9 @@ body {
     color: rgb(var(--color-secondary-700));
 }
 
+.rti--tag span {
+    color: rgb(var(--color-secondary-700));
+}
 
 @layer base {
     :root {
@@ -65,7 +70,7 @@ body {
             --color-red-300: 252, 165, 165;
             --color-purple: 123, 107, 212;
             --color-pink: 253, 73, 107;
-            --color-green:4, 172, 65;
+            --color-green: 4, 172, 65;
         }
 
         &.dark-mode {
@@ -87,7 +92,7 @@ body {
 
 @layer components {
     .textFailed {
-        @apply w-full bg-secondary-100 border border-primary-500 rounded-xl py-2 outline-none transition-all duration-300 focus:border-primary-900 focus:shadow-lg focus:shadow-primary-300
+        @apply w-full bg-secondary-100 border text-secondary-800 border-primary-500 rounded-xl py-2 outline-none transition-all duration-300 focus:border-primary-900 focus:shadow-lg focus:shadow-primary-300
     }
 
     .btn {
@@ -182,6 +187,7 @@ tr:nth-child(even) {
 td {
     text-align: center;
     padding: .7rem 0;
+    color: rgb(var(--color-secondary-800));
 }
 
 td:nth-child(1) {

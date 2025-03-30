@@ -13,9 +13,9 @@ function ProjectsTable() {
     return (
         <div className='overflow-x-auto'>
             <div className='flex items-center justify-between'>
-                <h2 className='font-bold text-base'>لیست پروژه ها</h2>
+                <h2 className='font-bold text-base text-secondary-800'>لیست پروژه ها</h2>
                 <button
-                    className='btn btn--primary flex items-center gap-3 font-bold'
+                    className='btn btn--primary flex items-center text-secondary-0 gap-3 font-bold'
                     onClick={() => setIsOpenCreeate(true)}>
                     <HiPlus className='w-5 h-5 font-bold' />
                     <span>اضافه کردن پروژه</span>

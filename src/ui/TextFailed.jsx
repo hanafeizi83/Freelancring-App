@@ -4,7 +4,7 @@ function TextFailed({ label, name, type = 'text', register, errors, validationSk
 
     return (
         <div className='space-y-2'>
-            <label htmlFor={name}>
+            <label htmlFor={name} className='text-secondary-800'>
                 {label} :
                 {required && <span className='text-error'>*</span>}
 

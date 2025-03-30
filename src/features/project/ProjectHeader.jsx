@@ -7,9 +7,9 @@ function ProjectHeader({ project = {} }) {
   return (
     <div className='text-right flex items-center gap-x-6'>
       <button onClick={() => goBack()}>
-        <HiArrowRight className='icon' />
+        <HiArrowRight className='icon text-secondary-800' />
       </button>
-      <h2 className='font-bold text-base text-[1.1rem]'>در خواست های پروژه {project.title}</h2>
+      <h2 className='font-bold text-base text-[1.1rem] text-secondary-800'>در خواست های پروژه {project.title}</h2>
     </div>
   )
 }

@@ -97,7 +97,7 @@ function CreeateProjectForm({ onClose, project = {} }) {
                 options={categories}
             />
             <div>
-                <label htmlFor="">تگ ها</label>
+                <label htmlFor="" className='text-secondary-800'>تگ ها</label>
                 <TagsInput
                     value={tag}
                     onChange={setTag}
