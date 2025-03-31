@@ -15,6 +15,9 @@ import FreelancerLayout from './features/freelancer/FreelancerLayout'
 import FreelancerDashboard from './pages/FreelancerDashboard'
 import SubmitProjects from './pages/SubmitProjects'
 import Proposals from './pages/Proposals'
+import AdminLayout from './features/admin/AdminLayout'
+import AdminDashboard from './pages/AdminDashboard'
+import Users from './pages/Users'
 
 function App() {
   const queryClinet = new QueryClient();
@@ -38,6 +41,14 @@ function App() {
             <Route path='/freelancer' element={<FreelancerLayout />}>
               <Route index element={<Navigate to='dashboard' />} />
               <Route path='dashboard' element={<FreelancerDashboard />} />
+              <Route path='projects' element={<SubmitProjects />} />
+              <Route path='proposals' element={<Proposals />} />
+            </Route>
+
+            <Route path='/admin' element={<AdminLayout />}>
+              <Route index element={<Navigate to='dashboard' />} />
+              <Route path='dashboard' element={<AdminDashboard />} />
+              <Route path='users' element={<Users />} />
               <Route path='projects' element={<SubmitProjects />} />
               <Route path='proposals' element={<Proposals />} />
             </Route>
