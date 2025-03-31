@@ -17,7 +17,7 @@ const statusOptions = [
 function ProjectHeader() {
     const { transformedCategories } = useCategories()
     return (
-        <div className='flex items-center gap-x-4'>
+        <div className='flex items-center gap-x-10'>
             <FilterDropDown
                 name='category'
                 options={[

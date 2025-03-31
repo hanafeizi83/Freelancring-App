@@ -6,7 +6,7 @@ import Loader from './../../../ui/Loader'
 import Empty from '../../../ui/Empty';
 function ProjectsTable() {
     const { projects={}, isLoading } = useProjects();
-    if (!projects.length) return <Empty resourceName={'درخواستی'} />
+    if (!projects.length) return <Empty resourceName={'پروژه ایی'} />
     if (isLoading) return <Loader />
     return (
         <Table>

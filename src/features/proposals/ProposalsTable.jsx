@@ -2,10 +2,13 @@ import React from 'react'
 import Table from './../../ui/Table'
 import useProposals from './useProposals'
 import ProposalRow from './ProposalRow';
+import Loader from '../../ui/Loader';
+import Empty from '../../ui/Empty';
 function ProposalsTable() {
     const {proposals , isLoading}=useProposals();
-    console.log(proposals);
-    
+
+    if(isLoading) return <Loader />
+    if(!proposals.length) return <Empty resourceName={'درخواستی'} />
     return (
         <Table>
             <Table.Header>
