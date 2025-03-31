@@ -15,3 +15,7 @@ export function compeleteProfileApi(data) {
 export function userProfileApi() {
     return http.get('/user/profile').then(({ data }) => data.data);
 }
+
+export function usersApi() {
+    return http.get('/admin/user/list').then(({ data }) => data.data);
+}
