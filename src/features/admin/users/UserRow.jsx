@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Table from '../../../ui/Table'
-
+import Modal from './../../../ui/Modal'
+import ChangeUserStatus from './ChangeUserStatus'
 
 const statusStyle = [
     { label: 'رد شده', className: 'badge--danger' },
@@ -8,8 +9,8 @@ const statusStyle = [
     { label: 'تایید شده', className: 'badge--success' },
 ]
 
-
 function UserRow({ index, user }) {
+    const [isOpen, setIsOpen] = useState(false)
     let role = '';
     switch (user.role) {
         case 'ADMIN': role = 'ادمین'; break;
@@ -27,9 +28,12 @@ function UserRow({ index, user }) {
                 <span className={`badge ${statusStyle[user.status].className}`}>{statusStyle[user.status].label}</span>
             </td>
             <td>
-                <button className='btn btn--secondary'>
+                <button className='btn btn--secondary' onClick={() => setIsOpen(true)}>
                     تغییر وضعیت
                 </button>
+                <Modal open={isOpen} onClose={() => setIsOpen(false)} title={'تغییر وضعیت کاربر'}>
+                    <ChangeUserStatus />
+                </Modal>
             </td>
         </Table.Row>
     )
