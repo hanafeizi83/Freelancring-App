@@ -26,6 +26,10 @@ function AdminLayout() {
                     <TiThSmallOutline className='icon' />
                     <span>درخواست ها</span>
                 </CustomeNavLink>
+                <CustomeNavLink to='categories'>
+                    <TiThSmallOutline className='icon' />
+                    <span>دسته بندی ها</span>
+                </CustomeNavLink>
             </Sidebar>
         </AppLayout>
     )

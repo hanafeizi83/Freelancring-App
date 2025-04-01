@@ -17,6 +17,7 @@ import Proposals from './pages/Proposals'
 import AdminLayout from './features/admin/AdminLayout'
 import AdminDashboard from './pages/AdminDashboard'
 import Users from './pages/Users'
+import Categories from './pages/Categories'
 
 function App() {
   const queryClinet = new QueryClient();
@@ -50,6 +51,7 @@ function App() {
               <Route path='users' element={<Users />} />
               <Route path='projects' element={<SubmitProjects />} />
               <Route path='proposals' element={<Proposals />} />
+              <Route path='categories' element={<Categories />} />
             </Route>
           </Routes>
         </QueryClientProvider>
