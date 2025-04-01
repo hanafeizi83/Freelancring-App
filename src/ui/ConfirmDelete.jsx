@@ -3,19 +3,13 @@ import useDeleteProject from '../features/projects/useDeleteProject'
 import Loader from './Loader';
 
 
-function ConfirmDelete({ project, onClose }) {
-    const { isDeleting, deleteProject } = useDeleteProject();
-
-    const handleDleteProject = (e) => {
-        deleteProject(project._id, {
-            onSuccess: () => {
-                onClose();
-            }
-        })
+function ConfirmDelete({ title, onClose, cb ,isDeleting }) {
+    const handleDleteProject = () => {
+        cb();
     }
     return (
         <div className='space-y-4 mt-4' >
-            <h2 className='text-right font-bold'>آیا از حذف پروژه {project.title} مطمئن هستید ؟</h2>
+            <h2 className='text-right font-bold'>آیا از حذف پروژه {title} مطمئن هستید ؟</h2>
             <div className='flex items-center justify-between gap-x-4'>
                 <button
                     onClick={onClose}

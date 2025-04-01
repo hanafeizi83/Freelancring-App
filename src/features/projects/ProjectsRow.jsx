@@ -10,9 +10,16 @@ import ConfirmDelete from '../../ui/ConfirmDelete';
 import CreeateProjectForm from './CreeateProjectForm';
 import ToggleProjectStatus from './ToggleProjectStatus';
 import { useNavigate } from 'react-router-dom';
+import useDeleteProject from './useDeleteProject';
 
 function ProjectsRow({ project, index }) {
-    const navigate=useNavigate();
+
+    const { isDeleting, deleteProject } = useDeleteProject();
+
+
+
+
+    const navigate = useNavigate();
     const [isOpenEdit, setIsOpenEdit] = useState(false);
     const [isOpenDelete, setIsOpenDelete] = useState(false);
     const { title, description, deadline, budget, category, freelancer, tags, status } = project;
@@ -33,7 +40,7 @@ function ProjectsRow({ project, index }) {
             </td>
             <td>{freelancer?.name || '-'}</td>
             <td>
-                    <ToggleProjectStatus project={project}/>
+                <ToggleProjectStatus project={project} />
             </td>
             <td>
                 <div className='flex gap-x-3'>
@@ -42,7 +49,16 @@ function ProjectsRow({ project, index }) {
                             <HiTrash className='icon text-error' />
                         </button>
                         <Modal onClose={() => setIsOpenDelete(false)} open={isOpenDelete} title={`حذف پروژه ${project.title}`}>
-                            <ConfirmDelete project={project} onClose={() => setIsOpenDelete(false)} />
+                            <ConfirmDelete
+                                cb={() => deleteProject(project._id, {
+                                    onSuccess: () => {
+                                        onClose();
+                                    }
+                                })}
+                                title={project.title}
+                                onClose={() => setIsOpenDelete(false)}
+                                isDeleting={isDeleting}
+                            />
                         </Modal>
                     </>
                     <>
@@ -56,7 +72,7 @@ function ProjectsRow({ project, index }) {
                 </div>
             </td>
             <td>
-                <button onClick={()=> navigate(`/owner/project/${project._id}`)}>
+                <button onClick={() => navigate(`/owner/project/${project._id}`)}>
                     <HiEye className='icon text-primary-800' />
                 </button>
             </td>
