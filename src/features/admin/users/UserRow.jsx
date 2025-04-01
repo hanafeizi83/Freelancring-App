@@ -32,7 +32,7 @@ function UserRow({ index, user }) {
                     تغییر وضعیت
                 </button>
                 <Modal open={isOpen} onClose={() => setIsOpen(false)} title={'تغییر وضعیت کاربر'}>
-                    <ChangeUserStatus />
+                    <ChangeUserStatus userId={user._id} onClose={() => setIsOpen(false)}/>
                 </Modal>
             </td>
         </Table.Row>
