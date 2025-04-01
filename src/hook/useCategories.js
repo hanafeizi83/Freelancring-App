@@ -15,6 +15,6 @@ export default function useCategories() {
         { label: item.title, value: item.englishTitle }
     ))
 
-    return { isLoading, categories , transformedCategories}
+    return { isLoading, categories , transformedCategories , rawCategories}
 
 }
