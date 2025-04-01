@@ -7,3 +7,7 @@ export function categoriesApi() {
 export function categoryDeleteApi(id) {
     return http.delete(`/admin/category/remove/${id}`).then(({ data }) => data.data)
 }
+
+export function categoryCreateApi(data) {
+    return http.post(`/admin/category/add`, data).then(({ data }) => data.data)
+}
