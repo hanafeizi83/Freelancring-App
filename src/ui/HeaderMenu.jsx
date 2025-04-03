@@ -1,7 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import DarkMode from './DarkMode'
-import Logout from './Logout'
+import Logout from '../features/ahtentication/Logout'
 
 function HeaderMenu() {
     return (
