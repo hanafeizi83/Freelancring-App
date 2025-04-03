@@ -1,11 +1,11 @@
 import React from 'react'
 import TextFailed from '../../ui/TextFailed'
 import { useForm } from 'react-hook-form';
-import RadioInput from '../../ui/RadioInput';
 import { useMutation } from '@tanstack/react-query';
 import { compeleteProfileApi } from '../../services/authentication';
 import toast from 'react-hot-toast';
 import RadioGroup from '../../ui/RadioGroup';
+import Loader from './../../ui/Loader'
 
 function CompleteProfileForm() {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -68,7 +68,10 @@ function CompleteProfileForm() {
                     </div>
                     {errors && errors['role'] && <p className='text-error'>{errors['role'].message}</p>}
                 </div>
-                <button className='btn btn--primary w-full'>تایید </button>
+                {
+                    isPending ? <Loader /> :
+                        <button className='btn btn--primary w-full'>تایید </button>
+                }
             </form>
         </div>
     )

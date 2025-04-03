@@ -2,6 +2,7 @@ import React from 'react'
 import SelectRHF from '../../ui/SelectRHF'
 import { useForm } from 'react-hook-form'
 import useChangeProposalStatus from '../../hook/useChangeProposalStatus';
+import Loader from './../../ui/Loader'
 
 const options = [
     { label: 'رد شده', value: 0 },
@@ -32,7 +33,10 @@ function ChangeProposalsStatus({ proposalId, onClose }) {
                 }}
                 options={options}
             />
-            <button className='btn btn--primary w-full'>تایید</button>
+            {
+                isUpdating ? <Loader /> :
+                    <button className='btn btn--primary w-full'>تایید</button>
+            }
         </form>
     )
 }

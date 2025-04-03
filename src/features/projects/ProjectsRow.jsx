@@ -13,12 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import useDeleteProject from './useDeleteProject';
 
 function ProjectsRow({ project, index }) {
-
     const { isDeleting, deleteProject } = useDeleteProject();
-
-
-
-
     const navigate = useNavigate();
     const [isOpenEdit, setIsOpenEdit] = useState(false);
     const [isOpenDelete, setIsOpenDelete] = useState(false);

@@ -5,11 +5,15 @@ import Table from '../../ui/Table';
 import ProjectsRow from './ProjectsRow';
 import Modal from '../../ui/Modal';
 import CreeateProjectForm from './CreeateProjectForm';
+import Loader from '../../ui/Loader';
+import Empty from './../../ui/Empty'
 
 function ProjectsTable() {
     const { isLoading, projects = [] } = useOwnerProjects();
     const [isOpenCreate, setIsOpenCreeate] = useState();
     
+    if(!projects.length)  return <Empty resourceName='پروژه ایی' />
+    if(isLoading) return <Loader />
     return (
         <div className='overflow-x-auto'>
             <div className='flex items-center justify-between'>

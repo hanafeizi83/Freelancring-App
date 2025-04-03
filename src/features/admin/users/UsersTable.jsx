@@ -3,10 +3,12 @@ import Table from './../../../ui/Table'
 import useUsers from './useUsers'
 import Loader from './../../../ui/Loader'
 import UserRow from './UserRow';
+import Empty from '../../../ui/Empty';
 
 function UsersTable() {
     const { users, isLoading } = useUsers();
 
+    if(!users.length) return <Empty resourceName={'کاربری'} />
     if (isLoading) return <Loader />
     return (
         <Table>

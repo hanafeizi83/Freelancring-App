@@ -2,9 +2,12 @@ import React from 'react'
 import TextFailed from './../../ui/TextFailed'
 import { useForm } from 'react-hook-form'
 import useCreateProposal from './useCreateProposal'
+import Loader from './../../ui/Loader'
+
 function CreateProposalForm({ projectId, onClose }) {
     const { isCreating, createProposal } = useCreateProposal()
     const { register, handleSubmit, formState: { errors } } = useForm();
+    
     const onSubmit = (data) => {
         createProposal({ ...data, projectId }, {
             onSuccess: () => {
@@ -43,9 +46,12 @@ function CreateProposalForm({ projectId, onClose }) {
                     required: 'زمان تحویل ضروری است'
                 }}
             />
-            <button className='btn btn--primary w-full'>
-                تایید
-            </button>
+            {
+                isCreating ? <Loader /> :
+                    <button className='btn btn--primary w-full'>
+                        تایید
+                    </button>
+            }
         </form>
     )
 }
