@@ -18,3 +18,10 @@
   font-weight: 900;
   src: url("/fonts//Vazirmatn-Black.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: "Arahala";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/fonts/SH-AraHala.ttf") ;
+}

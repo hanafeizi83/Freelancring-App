@@ -22,9 +22,9 @@ function CompleteProfileForm() {
                 toast('پروفایل شما در انتظار تایید است', { icon: '⚠' });
                 return;
             }
-            if ('OWNER') return navigate('/owner')
-            if ('FREELANCER') return navigate('/freelancer')
-            if ('ADMIN') return navigate('/admin')
+            if (user.role === 'OWNER') return navigate('/owner')
+            if (user.role === 'FREELANCER') return navigate('/freelancer')
+            if (user.role === 'ADMIN') return navigate('/admin')
         } catch (error) {
             toast.error(error?.response?.data?.message)
         }

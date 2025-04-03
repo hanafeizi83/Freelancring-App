@@ -52,7 +52,8 @@ export default {
         green: colorWithOpacity('--color-green')
       },
       fontFamily: {
-        sans: ['Vazir', ...fontFamily.sans]
+        sans: ['Vazir', ...fontFamily.sans],
+        arahala:'Arahala'
       }
     },
   },
