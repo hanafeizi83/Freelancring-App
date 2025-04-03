@@ -12,6 +12,6 @@ export function categoryCreateApi(data) {
     return http.post(`/admin/category/add`, data).then(({ data }) => data.data)
 }
 
-export function categoryEditApi({ id, data }) {
-    return http.patch(`//admin/category/update/${id}`, data).then(({ data }) => data.data)
+export function categoryEditApi({ id, newCategory }) {
+    return http.patch(`/admin/category/update/${id}`, newCategory).then(({ data }) => data.data)
 }

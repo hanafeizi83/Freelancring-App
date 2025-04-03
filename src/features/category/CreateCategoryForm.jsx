@@ -3,6 +3,7 @@ import TextFailed from './../../ui/TextFailed'
 import { useForm } from 'react-hook-form'
 import useCreateCategory from './useCreateCategory';
 import useCategoryEdit from './useCategoryEdit';
+import Loader from './../../ui/Loader'
 
 function CreateCategoryForm({ onClose, category = {} }) {
     const categoryId = category._id;
@@ -24,13 +25,21 @@ function CreateCategoryForm({ onClose, category = {} }) {
     const { isEditing, editCategory } = useCategoryEdit();
     const onSubmit = (data) => {
         if (isEdit) {
-            editCategory({ id: categoryId, data }, {
+            const newCategory = {
+                ...data,
+                type: 'ticket'
+            }
+            editCategory({ id: categoryId, newCategory }, {
                 onSuccess: () => {
                     onClose()
                 }
             })
         } else {
-            createCategory(data, {
+            const newCategory = {
+                ...data,
+                type: 'project'
+            }
+            createCategory(newCategory, {
                 onSuccess: () => {
                     onClose()
                 }
@@ -69,20 +78,13 @@ function CreateCategoryForm({ onClose, category = {} }) {
                     required: 'توضیحات ضروری است'
                 }}
             />
-            <TextFailed
-                label='نوع'
-                name='type'
-                register={register}
-                errors={errors}
-                required
-                validationSkma={{
-                    required: 'نوع ضروری است'
-                }}
-            />
 
-            <button className='btn btn--primary w-full'>
-                تایید
-            </button>
+            {
+                isCreating || isEditing ? <Loader /> :
+                    <button className='btn btn--primary w-full'>
+                        تایید
+                    </button>
+            }
         </form>
     )
 }
