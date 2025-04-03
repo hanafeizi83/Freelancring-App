@@ -8,7 +8,7 @@ import Timer from '../../ui/Timer';
 import { MdEdit } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 
-let INITIOL_STATE = 10;
+let INITIOL_STATE = 90;
 function CheckOtpForm({ phoneNumber, onSendOtp, otpResponse, onBack }) {
     const [otp, setOtp] = useState('');
     const [time, setTime] = useState(INITIOL_STATE)
@@ -29,9 +29,9 @@ function CheckOtpForm({ phoneNumber, onSendOtp, otpResponse, onBack }) {
                 toast('پروفایل شما در انتظار تایید است', { icon: '⚠' });
                 return;
             }
-            if ('OWNER') return navigate('/owner')
-            if ('FREELANCER') return navigate('/freelancer')
-            if ('ADMIN') return navigate('/admin')
+            if (user.role === 'OWNER') return navigate('/owner')
+            if (user.role === 'FREELANCER') return navigate('/freelancer')
+            if (user.role === 'ADMIN') return navigate('/admin')
 
         } catch (error) {
             toast.error(error?.response?.data?.message)

@@ -12,7 +12,6 @@ function AuthContainer() {
     const { isPending: isSendingOtp, mutateAsync, data } = useMutation({
         mutationFn: sendOtpApi
     })
-    console.log(data);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

@@ -18,6 +18,7 @@ import AdminLayout from './features/admin/AdminLayout'
 import AdminDashboard from './pages/AdminDashboard'
 import Users from './pages/Users'
 import Categories from './pages/Categories'
+import ProtectedRoute from './ui/ProtectedRoute'
 
 function App() {
   const queryClinet = new QueryClient();
@@ -31,21 +32,33 @@ function App() {
             <Route path='/auth' element={<Auth />} />
             <Route path='/compelete-profile' element={<CompleteProfile />} />
 
-            <Route path='/owner' element={<OwnerLayout />}>
+            <Route path='/owner' element={
+              <ProtectedRoute>
+                <OwnerLayout />
+              </ProtectedRoute>
+            }>
               <Route index element={<Navigate to='dashboard' />} />
               <Route path='dashboard' element={<OwnerDashboard />} />
               <Route path='projects' element={<Projects />} />
               <Route path='project/:id' element={<Project />} />
             </Route>
 
-            <Route path='/freelancer' element={<FreelancerLayout />}>
+            <Route path='/freelancer' element={
+              <ProtectedRoute>
+                <FreelancerLayout />
+              </ProtectedRoute>
+            }>
               <Route index element={<Navigate to='dashboard' />} />
               <Route path='dashboard' element={<FreelancerDashboard />} />
               <Route path='projects' element={<SubmitProjects />} />
               <Route path='proposals' element={<Proposals />} />
             </Route>
 
-            <Route path='/admin' element={<AdminLayout />}>
+            <Route path='/admin' element={
+              <ProtectedRoute>
+                <AdminLayout />
+              </ProtectedRoute>
+            }>
               <Route index element={<Navigate to='dashboard' />} />
               <Route path='dashboard' element={<AdminDashboard />} />
               <Route path='users' element={<Users />} />
