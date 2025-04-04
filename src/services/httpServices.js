@@ -14,13 +14,15 @@ app.interceptors.request.use(
 
 app.interceptors.response.use(
     res => res,
-    err => {
+    async err => {
         const OriginalConfig = err.config;
         if (err?.response?.status == 401 && !OriginalConfig._retry) {
             OriginalConfig._retry = true;
             try {
-                const { data } = axios.get(`${BASE_URL}/user/refresh-token`, { withCredentials: true });
+                const { data } =await axios.get(`${BASE_URL}/user/refresh-token`, { withCredentials: true });
                 if (data) return app(OriginalConfig);
+                console.log(data);
+                
             } catch (error) {
                 return Promise.reject(error);
             }

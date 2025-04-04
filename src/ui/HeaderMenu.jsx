@@ -7,7 +7,7 @@ function HeaderMenu() {
     const navigate=useNavigate();
     return (
         <>
-            <ul className='flex items-center gap-x-10 list-none'>
+            <ul className='flex items-center gap-x-5 md:gap-x-8 list-none'>
                 <li
                     className='HeaderLi HeaderLiAfter HeaderLiAfterHover'
                     onClick={()=> navigate('/')}
