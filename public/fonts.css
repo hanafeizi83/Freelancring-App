@@ -25,3 +25,10 @@
   font-weight: 900;
   src: url("/fonts/SH-AraHala.ttf") ;
 }
+
+@font-face {
+  font-family: "Ordibehesht";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/fonts/Ordibehesht.TTF") ;
+}

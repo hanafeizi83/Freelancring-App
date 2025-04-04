@@ -53,7 +53,8 @@ export default {
       },
       fontFamily: {
         sans: ['Vazir', ...fontFamily.sans],
-        arahala:'Arahala'
+        arahala: 'Arahala',
+        ordibehesht: 'Ordibehesht'
       }
     },
   },

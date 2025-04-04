@@ -19,6 +19,9 @@ import AdminDashboard from './pages/AdminDashboard'
 import Users from './pages/Users'
 import Categories from './pages/Categories'
 import ProtectedRoute from './ui/ProtectedRoute'
+import LayoutAsli from './ui/LayoutAsli'
+import About from './pages/About'
+import Conect from './pages/Conect'
 
 function App() {
   const queryClinet = new QueryClient();
@@ -31,7 +34,10 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/auth' element={<Auth />} />
             <Route path='/compelete-profile' element={<CompleteProfile />} />
-
+            <Route path='/' element={<LayoutAsli />}>
+              <Route path='about' element={<About />} />
+              <Route path='conect' element={<Conect />} />
+            </Route>
             <Route path='/owner' element={
               <ProtectedRoute>
                 <OwnerLayout />
