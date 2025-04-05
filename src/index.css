@@ -128,7 +128,7 @@ body {
     }
 
     .HeaderLi {
-        @apply relative hover:text-primary-900 cursor-pointer transition-all duration-300
+        @apply relative hover:text-primary-900 cursor-pointer transition-all duration-300 text-secondary-900
     }
 
     .HeaderLiAfter {

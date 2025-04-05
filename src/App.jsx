@@ -21,7 +21,7 @@ import Categories from './pages/Categories'
 import ProtectedRoute from './ui/ProtectedRoute'
 import LayoutAsli from './ui/LayoutAsli'
 import About from './pages/About'
-import Conect from './pages/Conect'
+import Contact from './pages/Contact'
 
 function App() {
   const queryClinet = new QueryClient();
@@ -36,7 +36,7 @@ function App() {
             <Route path='/compelete-profile' element={<CompleteProfile />} />
             <Route path='/' element={<LayoutAsli />}>
               <Route path='about' element={<About />} />
-              <Route path='conect' element={<Conect />} />
+              <Route path='contact' element={<Contact />} />
             </Route>
             <Route path='/owner' element={
               <ProtectedRoute>

@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 function LayoutAsli() {
     return (
-        <div>
+        <div className='container'>
             <Header />
             <Outlet />
         </div>

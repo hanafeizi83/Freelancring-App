@@ -23,12 +23,26 @@
   font-family: "Arahala";
   font-style: normal;
   font-weight: 900;
-  src: url("/fonts/SH-AraHala.ttf") ;
+  src: url("/fonts/SH-AraHala.ttf");
 }
 
 @font-face {
   font-family: "Ordibehesht";
   font-style: normal;
   font-weight: 900;
-  src: url("/fonts/Ordibehesht.TTF") ;
+  src: url("/fonts/Ordibehesht.TTF");
+}
+
+@font-face {
+  font-family: "Zar";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/fonts/B Zar_0.ttf");
+}
+
+@font-face {
+  font-family: "Lalezar";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/fonts/Lalezar-Regular.ttf");
 }

@@ -24,7 +24,7 @@ function Home() {
       <div className='container w-auto max-w-screen-lg mt-2 md:flex md:flex-col md:justify-center md:items-center lg:mt-16 lg:flex lg:flex-row lg:items-center lg:justify-between'>
         <img src="./images/home.png" alt="homepage" className='w-full md:w-[80%] lg:w-[60%] ' />
         <div className='w-full space-y-4 md:flex md:flex-col md:justify-center md:items-center lg:w-[40%]'>
-          <h2 className='font-ordibehesht font-bold w-[100%] text-lg md:w-[80%] md:text-center lg:w-full'>
+          <h2 className='font-ordibehesht text-secondary-800 font-bold w-[100%] text-lg md:w-[80%] md:text-center lg:w-full'>
             سایت‌های فریلنسری به عنوان پلتفرم‌هایی برای ارتباط بین کارفرمایان و فریلنسرها عمل می‌کنند. این سایت‌ها به افراد این امکان را می‌دهند که پروژه‌های مختلف را پیدا کرده و بر اساس مهارت‌ها و تجربیات خود، به انجام آن‌ها بپردازند.
           </h2>
           {

@@ -19,7 +19,7 @@ export default {
     extend: {
       container: {
         center: true,
-        padding:'1rem'
+        padding: '1rem'
       },
       colors: {
         primary: {
@@ -55,7 +55,8 @@ export default {
       fontFamily: {
         sans: ['Vazir', ...fontFamily.sans],
         arahala: 'Arahala',
-        ordibehesht: 'Ordibehesht'
+        ordibehesht: 'Ordibehesht',
+        lalezar: 'Lalezar'
       }
     },
   },

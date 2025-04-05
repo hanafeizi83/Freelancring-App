@@ -18,7 +18,7 @@ function HeaderMenu() {
                 >درباره ما</li>
                 <li
                     className='HeaderLi HeaderLiAfter HeaderLiAfterHover'
-                    onClick={()=> navigate('/conect')}
+                    onClick={()=> navigate('/contact')}
                 >تماس با ما</li>
             </ul>
             <ul className='flex items-center gap-x-4 list-none'>
