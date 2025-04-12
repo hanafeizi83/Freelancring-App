@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
     background-color: rgb(var(--color-secondary-0));
     margin: 0;
@@ -206,4 +205,37 @@ td {
 
 td:nth-child(1) {
     padding: .7rem.5rem .7rem 0;
+}
+
+/* slick */
+.slick-arrow::before{
+    background-color: transparent !important;
+    border: 1px solid rgb(var(--color-primary-800)) !important;
+    border-radius: 5px !important;
+    color: rgb(var(--color-primary-800)) !important;
+}
+.slick-center div{
+    height: 10rem !important;
+    width: 20rem !important;
+    position: absolute;
+}
+.swiper-slide {
+    border-radius: 15px;
+    overflow: hidden;
+    filter: blur(2px);
+    position: relative;
+}
+.swiper-slide h1 {
+    position:absolute;
+    bottom: -20rem;
+    transition: .3s all;
+}
+.swiper-slide-next{
+    width: 25rem !important;
+    height: 20rem !important;
+    filter: blur(0);
+}
+
+.swiper-slide-next h1{
+    bottom: 0;
 }
