@@ -11,17 +11,17 @@ function FreelancerLayout() {
         <AppLayout>
             <Sidebar>
                 <CustomeNavLink to='dashboard'>
-                    <HiOutlineHome className='icon' />
-                    <span>داشبورد</span>
+                    <HiOutlineHome className='icon-sidbar' />
+                    <span className='TextSidebar'>داشبورد</span>
                 </CustomeNavLink>
 
                 <CustomeNavLink to='projects'>
-                    <GoProjectSymlink className='icon' />
-                    <span>پروژه ها</span>
+                    <GoProjectSymlink className='icon-sidbar' />
+                    <span className='TextSidebar'>پروژه ها</span>
                 </CustomeNavLink>
                 <CustomeNavLink to='proposals'>
-                    <TiThSmallOutline className='icon' />
-                    <span>درخواست ها</span>
+                    <TiThSmallOutline className='icon-sidbar' />
+                    <span className='TextSidebar'>درخواست ها</span>
                 </CustomeNavLink>
 
             </Sidebar>

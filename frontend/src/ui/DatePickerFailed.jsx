@@ -5,7 +5,7 @@ import persian_fa from 'react-date-object/locales/persian_fa'
 
 function DatePickerFailed({ label, value, onChange, name }) {
     return (
-        <div>
+        <div className='flex flex-col'>
             <label className='text-secondary-800'>{label}</label>
             <DatePicker
                 containerClassName='w-full'

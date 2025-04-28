@@ -3,7 +3,7 @@ import React from 'react'
 function TextFailed({ label, name, type = 'text', register, errors, validationSkma, required }) {
 
     return (
-        <div className='space-y-2'>
+        <div className='flex flex-col space-y-2'>
             <label htmlFor={name} className='text-secondary-800'>
                 {label} :
                 {required && <span className='text-error'>*</span>}

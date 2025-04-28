@@ -6,7 +6,7 @@ function Select({ name, options, onChange }) {
             <select className='textFailed w-64 py-2' name={name} onChange={onChange}>
                 {
                     options.map(item => (
-                        <option value={item.value}>{item.label}</option>
+                        <option key={item.value} value={item.value}>{item.label}</option>
                     ))
                 }
             </select>

@@ -62,7 +62,7 @@ class userAuthController extends Controller {
     // await setAuthCookie(res, user); // set httpOnly cookie
     await setAccessToken(res, user);
     await setRefreshToken(res, user);
-    let WELLCOME_MESSAGE = `کد تایید شد، به فرانت هوکس خوش آمدید`;
+    let WELLCOME_MESSAGE = `کد تایید شد، به سایت فریلنسری کاجو خوش آمدید`;
     if (!user.isActive)
       WELLCOME_MESSAGE = `کد تایید شد، لطفا اطلاعات خود را تکمیل کنید`;
 
@@ -109,7 +109,7 @@ class userAuthController extends Controller {
       apikey: `${process.env.KAVENEGAR_API_KEY}`,
     });
     console.log(process.env.KAVENEGAR_API_KEY);
-    
+
     kaveNegarApi.VerifyLookup(
       {
         receptor: phoneNumber,

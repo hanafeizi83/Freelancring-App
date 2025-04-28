@@ -10,13 +10,13 @@ function OwnerLayout() {
         <AppLayout>
             <Sidebar>
                 <CustomeNavLink to='dashboard'>
-                    <HiOutlineHome className='icon' />
-                    <span>داشبورد</span>
+                    <HiOutlineHome className='icon-sidbar' />
+                    <span className='TextSidebar'>داشبورد</span>
                 </CustomeNavLink>
 
                 <CustomeNavLink to='projects'>
-                    <GoProjectSymlink className='icon' />
-                    <span>پروژه ها</span>
+                    <GoProjectSymlink className='icon-sidbar' />
+                    <span className='TextSidebar'>پروژه ها</span>
                 </CustomeNavLink>
             </Sidebar>
         </AppLayout>

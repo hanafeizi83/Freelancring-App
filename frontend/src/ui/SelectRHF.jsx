@@ -2,7 +2,7 @@ import React from 'react'
 
 function SelectRHF({ label, required, name, errors, options ,register,validationSkma}) {
     return (
-        <div className='space-y-2'>
+        <div className='space-y-2 flex flex-col'>
             <label htmlFor={name} className='text-secondary-800'>
                 {label} :
                 {required && <span className='text-error'>*</span>}

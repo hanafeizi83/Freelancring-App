@@ -2,9 +2,11 @@ import React from 'react'
 
 function Table({ children }) {
     return (
-        <table>
-            {children}
-        </table>
+        <div className="bg-secondary-0 overflow-x-auto">
+            <table>
+                {children}
+            </table>
+        </div>
     )
 }
 
@@ -18,7 +20,7 @@ function TableBody({ children }) {
 
 function TableHeader({ children }) {
     return <thead>
-        <tr>
+        <tr className="title-row">
             {children}
         </tr>
     </thead>

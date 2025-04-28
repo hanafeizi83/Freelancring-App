@@ -3,12 +3,11 @@ import useUser from '../features/ahtentication/useUser'
 import HeaderAvatar from './HeaderAvatar';
 import HeaderMenu from './HeaderMenu';
 import { useNavigate } from 'react-router-dom';
+import { MdMenu } from 'react-icons/md';
 
 function Header() {
   const { isLoading, user } = useUser();
   const navigate = useNavigate();
-  console.log(user, isLoading);
-
 
   return (
     <div className={`bg-secondary-0 col-span-1`}>
