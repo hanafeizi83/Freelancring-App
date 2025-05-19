@@ -38,7 +38,7 @@ function AuthContainer() {
                 phoneNumber={phone}
                 onSendOtp={handleSubmit}
                 onBack={() => setStep(1)}
-                otpResponse={data.message}
+                otpResponse={data?.message}
             />
             default: return null
         }

@@ -15,7 +15,7 @@ function SendOtpForm({ phoneNumber, setPhoneNumber, onSubmit, isSendingOtp }) {
         <div className='w-full'>
             <form className='space-y-3' onSubmit={onSubmit}>
                 <div className='space-y-2'>
-                    <label htmlFor="phoneNumber" className=''>شماره تلفن : </label>
+                    <label htmlFor="phoneNumber" className='text-secondary-800'>شماره تلفن : </label>
                     <PhoneInput
                         defaultCountry='IR'
                         placeholder='شماره تلفن'

@@ -4,23 +4,9 @@ import Logout from '../features/ahtentication/Logout'
 import { useNavigate } from 'react-router-dom'
 
 function HeaderMenu() {
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     return (
         <>
-            <ul className='flex items-center gap-x-5 md:gap-x-8 list-none'>
-                <li
-                    className='HeaderLi HeaderLiAfter HeaderLiAfterHover'
-                    onClick={()=> navigate('/')}
-                >خانه</li>
-                <li
-                    className='HeaderLi HeaderLiAfter HeaderLiAfterHover'
-                    onClick={()=> navigate('/about')}
-                >درباره ما</li>
-                <li
-                    className='HeaderLi HeaderLiAfter HeaderLiAfterHover'
-                    onClick={()=> navigate('/contact')}
-                >تماس با ما</li>
-            </ul>
             <ul className='flex items-center gap-x-4 list-none'>
                 <li className='flex'>
                     <DarkMode />

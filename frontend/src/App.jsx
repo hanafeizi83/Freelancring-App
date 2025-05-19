@@ -37,8 +37,8 @@ function App() {
             <Route path='/auth' element={<Auth />} />
             <Route path='/compelete-profile' element={<CompleteProfile />} />
             <Route path='/' element={<LayoutAsli />}>
-              <Route path='about' element={<About />} />
-              <Route path='contact' element={<Contact />} />
+              {/* <Route path='about' element={<About />} />
+              <Route path='contact' element={<Contact />} /> */}
             </Route>
             <Route path='/owner' element={
               <ProtectedRoute>

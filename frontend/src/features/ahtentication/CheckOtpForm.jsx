@@ -46,17 +46,17 @@ function CheckOtpForm({ phoneNumber, onSendOtp, otpResponse, onBack }) {
                     time > 0 ? <Timer
                         setTime={setTime}
                         initialRemainingTime={time}
-                    /> : <button className='btn btn--secondary' onClick={onSendOtp}>ارسال مجدد کد تایید</button>
+                    /> : <button className='btn btn--secondary text-secondary-800' onClick={onSendOtp}>ارسال مجدد کد تایید</button>
                 }
             </div>
             <div className='w-full flex items-center gap-4 mb-4'>
-                <h3 className='text-sm'>{otpResponse}</h3>
+                <h3 className='text-sm text-secondary-800'>{otpResponse}</h3>
                 <button className='text-success' onClick={onBack}>
                     <MdEdit />
                 </button>
             </div>
             <form className='space-y-5' onSubmit={handleCheckOtp}>
-                <h2 className='font-bold'>کد تایید خود را وارد کنید </h2>
+                <h2 className='font-bold text-secondary-800'>کد تایید خود را وارد کنید </h2>
                 <OTPInput
                     value={otp}
                     onChange={setOtp}
@@ -69,7 +69,7 @@ function CheckOtpForm({ phoneNumber, onSendOtp, otpResponse, onBack }) {
                 />
                 {
                     isPending ? <Loader /> :
-                        <button type='submit' className='btn btn--primary w-full'>تایید </button>
+                        <button type='submit' className='btn btn--primary w-full text-secondary-800'>تایید </button>
                 }
             </form>
         </div>
