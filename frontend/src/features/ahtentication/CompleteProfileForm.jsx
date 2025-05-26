@@ -6,6 +6,7 @@ import { compeleteProfileApi } from '../../services/authentication';
 import toast from 'react-hot-toast';
 import RadioGroup from '../../ui/RadioGroup';
 import Loader from './../../ui/Loader'
+import { Link } from 'react-router-dom';
 
 function CompleteProfileForm() {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -31,7 +32,7 @@ function CompleteProfileForm() {
     }
     return (
         <div className='w-full'>
-            <form className='w-full space-y-5' onSubmit={handleSubmit(onSubmit)}>
+            <form className='w-full space-y-5 mb-4' onSubmit={handleSubmit(onSubmit)}>
                 <TextFailed
                     label={'نام و نام خانوادگی'}
                     name='name'
@@ -72,7 +73,9 @@ function CompleteProfileForm() {
                     isPending ? <Loader /> :
                         <button className='btn btn--primary w-full'>تایید </button>
                 }
+                
             </form>
+            <Link to='/' className='text-primary-800 py-4'>بازگشت به خانه</Link>
         </div>
     )
 }

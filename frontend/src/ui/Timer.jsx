@@ -8,7 +8,7 @@ function Timer({ setTime, initialRemainingTime }) {
         if (remainingTime == 0) setTime(0)
 
 
-        return <span>{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}</span>
+        return <span className='text-secondary-800'>{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}</span>
     }
     return (
         <CountdownCircleTimer

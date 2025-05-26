@@ -8,9 +8,9 @@ function RadioInput({ label, name, register, validationSkma, value }) {
                 name={name}
                 {...register(name, validationSkma)}
                 value={value}
-                className='accent-primary-900 w-3 h-3'
+                className='accent-primary-900 w-3 h-3 text-secondary-800'
             />
-            <span>{label}</span>
+            <span className='text-secondary-800'>{label}</span>
         </div>
     )
 }

@@ -12,10 +12,10 @@ function CategoryTable() {
     const { rawCategories: categories, isLoading } = useCategories();
     const [isOpenCreate, setIsOpenCreeate] = useState();
 
-    if (!categories) return <Empty resourceName={'دسته بندی'} />
+    // if (!categories) return <Empty resourceName={'دسته بندی'} />
     if (isLoading) return <Loader />
     return (
-        <div className='overflow-x-auto'>
+        <div className=''>
             <div className='flex items-center justify-between'>
                 <h2 className='font-bold text-base text-secondary-800'>لیست دسته بندی ها</h2>
                 <button
@@ -28,23 +28,26 @@ function CategoryTable() {
                     <CreateCategoryForm onClose={() => setIsOpenCreeate(false)} />
                 </Modal>
             </div>
-            <Table>
-                <Table.Header>
-                    <th>#</th>
-                    <th>عنوان</th>
-                    <th>توضیحات</th>
-                    <th>نوع</th>
-                    <th>عملیات</th>
-                </Table.Header>
-                <Table.Body>
-                    {
-                        categories && categories.map((category, index) => (
-                            <CategoryRow key={category._id} category={category} index={index} />
-                        ))
-                    }
+            {
+                !categories.length ? <Empty resourceName={'دسته بندی'} /> : <Table>
+                    <Table.Header>
+                        <th className='text-center'>#</th>
+                        <th className='text-center'>عنوان</th>
+                        <th className='text-center'>توضیحات</th>
+                        <th className='text-center'>نوع</th>
+                        <th className='text-center'>عملیات</th>
+                    </Table.Header>
+                    <Table.Body>
+                        {
+                            categories && categories.map((category, index) => (
+                                <CategoryRow key={category._id} category={category} index={index} />
+                            ))
+                        }
 
-                </Table.Body>
-            </Table>
+                    </Table.Body>
+                </Table>
+            }
+
         </div>
     )
 }

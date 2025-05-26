@@ -1,9 +1,10 @@
 import React from 'react'
 import Table from './../../ui/Table'
 import ProposalRow from './ProposalRow';
+import Empty from '../../ui/Empty';
 function ProposalTable({ proposals }) {
   console.log(proposals);
-
+  if (!proposals?.length) return <Empty resourceName={'درخواستی'} />
   return (
     <Table>
       <Table.Header>

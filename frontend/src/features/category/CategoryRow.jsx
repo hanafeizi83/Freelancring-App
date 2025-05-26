@@ -15,11 +15,11 @@ function CategoryRow({ category, index }) {
 
     return (
         <Table.Row>
-            <td>{index + 1}</td>
-            <td>{title}</td>
-            <td>{description}</td>
-            <td>{type}</td>
-            <td>
+            <td className='text-center'>{index + 1}</td>
+            <td className='text-center'>{title}</td>
+            <td className='text-center'>{description}</td>
+            <td className='text-center'>{type}</td>
+            <td className='text-center'>
                 <div className='flex gap-x-3 justify-center items-center'>
                     <>
                         <button className='btn' onClick={() => setIsOpenDelete(true)}>

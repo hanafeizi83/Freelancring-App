@@ -64,7 +64,7 @@ function CheckOtpForm({ phoneNumber, onSendOtp, otpResponse, onBack }) {
                     renderSeparator={<span className='text-primary-400'>-</span>}
                     renderInput={(props) => <input {...props} />}
                     containerStyle='flex items-center justify-evenly flex-row-reverse'
-                    inputStyle='border p-2 !w-10 rounded-md border-primary-500 outline-none focus:border-primary-900 transition-all duration-300'
+                    inputStyle='bg-secondary-0 text-secondary-800 border p-2 !w-10 rounded-md border-primary-500 outline-none focus:border-primary-900 transition-all duration-300'
 
                 />
                 {
