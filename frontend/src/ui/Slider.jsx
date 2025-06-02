@@ -88,7 +88,7 @@ function SliderHome() {
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}
-            className='lg:w-[90%] md:w-[80%] sm:w-[50%]'
+            className='lg:w-[90%] md:w-[80%] w-[50%]'
           >
             {
               sliderItemData.map(item => {

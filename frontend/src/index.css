@@ -10,31 +10,30 @@ body {
     margin: 0;
     padding: 0;
 }
-
 .rti--container {
-    background-color: rgb(var(--color-secondary-100));
+    background-color: rgb(var(--color-secondary-0)) !important;
+    border: 1px solid rgb(var(--color-secondary-200)) !important;
+    border-radius: 1rem !important;
     --rti-radius: 0.375rem;
     --rti-s: 0.5rem;
     --rti-tag: #edf2f7;
     --rti-tag-remove: #e53e3e;
     border: none;
-}
-
-.rti--container .rti--input {
+  }
+  
+  .rti--container .rti--input {
     background-color: rgb(var(--color-secondary-200));
     color: rgb(var(--color-secondary-800));
     padding: 0.3rem 1rem;
     border-radius: 0.5rem;
-}
-
-.rti--tag {
-    background-color: rgb(var(--color-secondary-900));
-    color: black;
-}
-
-.rti--tag span {
-    color: black;
-}
+    font-weight: 100;
+  }
+  
+  .rti--tag {
+    background-color: rgb(var(--color-secondary-200)) !important;
+    color: rgb(var(--color-secondary-800)) !important;
+    font-weight: 100;
+  }
 
 .PhoneInputInput {
     background-color: transparent;
